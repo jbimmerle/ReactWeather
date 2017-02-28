@@ -24877,6 +24877,20 @@
 	  }
 	});
 
+	var Main = function Main(props) {
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(Nav, null),
+	    React.createElement(
+	      'h2',
+	      null,
+	      'Main Component'
+	    ),
+	    props.children
+	  );
+	};
+
 	module.exports = Main;
 
 /***/ },
@@ -24891,36 +24905,45 @@
 	    Link = _require.Link,
 	    IndexLink = _require.IndexLink;
 
-	var Nav = React.createClass({
-	  displayName: 'Nav',
+	// var Nav = React.createClass({
+	//   render: function () {
+	//     return (
+	//       <div>
+	//         <h2>Nav Component</h2>
+	//         <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink>
+	//         <IndexLink to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</IndexLink>
+	//         <IndexLink to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</IndexLink>
+	//       </div>
+	//     );
+	//   }
+	// });
 
-	  render: function render() {
-	    return React.createElement(
-	      'div',
+	var Nav = function Nav(props) {
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
+	      'h2',
 	      null,
-	      React.createElement(
-	        'h2',
-	        null,
-	        'Nav Component'
-	      ),
-	      React.createElement(
-	        IndexLink,
-	        { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	        'Get Weather'
-	      ),
-	      React.createElement(
-	        IndexLink,
-	        { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	        'About'
-	      ),
-	      React.createElement(
-	        IndexLink,
-	        { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	        'Examples'
-	      )
-	    );
-	  }
-	});
+	      'Nav Component'
+	    ),
+	    React.createElement(
+	      IndexLink,
+	      { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	      'Get Weather'
+	    ),
+	    React.createElement(
+	      IndexLink,
+	      { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	      'About'
+	    ),
+	    React.createElement(
+	      IndexLink,
+	      { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	      'Examples'
+	    )
+	  );
+	};
 
 	module.exports = Nav;
 
@@ -25046,25 +25069,29 @@
 
 	var React = __webpack_require__(1);
 
-	var WeatherMessage = React.createClass({
-	  displayName: 'WeatherMessage',
+	// var WeatherMessage = React.createClass({
+	//   render: function () {
+	//     var {temp, location} = this.props;
+	//
+	//     return (
+	//       <p>It is  {temp} in {location}</p>
+	//     );
+	//   }
+	// });
 
-	  render: function render() {
-	    var _props = this.props,
-	        temp = _props.temp,
-	        location = _props.location;
+	var WeatherMessage = function WeatherMessage(_ref) {
+	  var temp = _ref.temp,
+	      location = _ref.location;
 
-
-	    return React.createElement(
-	      'p',
-	      null,
-	      'It is  ',
-	      temp,
-	      ' in ',
-	      location
-	    );
-	  }
-	});
+	  return React.createElement(
+	    'p',
+	    null,
+	    'It is ',
+	    temp,
+	    ' in ',
+	    location
+	  );
+	};
 
 	module.exports = WeatherMessage;
 
@@ -26592,17 +26619,30 @@
 
 	var React = __webpack_require__(1);
 
-	var About = React.createClass({
-	  displayName: 'About',
+	// var About = React.createClass({
+	//   render: function () {
+	//     return (
+	//       <h3>About Component</h3>
+	//     );
+	//   }
+	// });
 
-	  render: function render() {
-	    return React.createElement(
+	var About = function About(props) {
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
 	      'h3',
 	      null,
-	      'About Component'
-	    );
-	  }
-	});
+	      'About'
+	    ),
+	    React.createElement(
+	      'p',
+	      null,
+	      'Welcome to the About page!'
+	    )
+	  );
+	};
 
 	module.exports = About;
 
@@ -26614,26 +26654,33 @@
 
 	var React = __webpack_require__(1);
 
-	var Examples = React.createClass({
-	  displayName: 'Examples',
+	// var Examples = React.createClass({
+	//   render: function () {
+	//     return (
+	//       <div>
+	//         <h3>Examples Component!</h3>
+	//         <p>Welcome to the examples page</p>
+	//       </div>
+	//     );
+	//   }
+	// });
 
-	  render: function render() {
-	    return React.createElement(
-	      'div',
+	var Examples = function Examples(props) {
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
+	      'h3',
 	      null,
-	      React.createElement(
-	        'h3',
-	        null,
-	        'Examples Component!'
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        'Welcome to the examples page'
-	      )
-	    );
-	  }
-	});
+	      'Examples'
+	    ),
+	    React.createElement(
+	      'p',
+	      null,
+	      'Welcome to the examples page!'
+	    )
+	  );
+	};
 
 	module.exports = Examples;
 
